@@ -165,7 +165,7 @@ function generateGraphProgress(Progressdata) {
   var value = 0
   var test = 0
   const amounts = Progressdata[0].xps.map((item) => {
-    if (item.path.includes("/rouen/div-01/") && !item.path.includes("/rouen/div-01/piscine-js/")) {
+    if (item.path.includes("/rouen/div-01/") && !item.path.includes("/rouen/div-01/piscine-js/") && !item.path.includes("/rouen/div-01/piscine-rust/")) {
       value += item.amount
       console.log(item.path, item.amount, item.originEventId)
       test++
@@ -195,7 +195,7 @@ function generateGraphProgress(Progressdata) {
   const pathData = Progressdata[0].xps.map((item, index) => {
     //console.log(item.path)
 
-    if (item.path.includes("/rouen/div-01/") && !item.path.includes("/rouen/div-01/piscine-js/")) {
+    if (item.path.includes("/rouen/div-01/") && !item.path.includes("/rouen/div-01/piscine-js/") && !item.path.includes("/rouen/div-01/piscine-rust/")) {
       update += item.amount
       const x = (index / (Progressdata[0].xps.length - 1)) * svgWidth;
       const y = svgHeight - (update / value) * svgHeight;
